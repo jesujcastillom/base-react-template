@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, ReactElement } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   decrement,
@@ -9,7 +9,7 @@ import {
 } from "./counterSlice";
 import styles from "./Counter.module.css";
 
-export function Counter() {
+export function Counter(): ReactElement {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
   const [incrementAmount, setIncrementAmount] = useState("2");
