@@ -1,0 +1,11 @@
+name: Lint commits
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: npm install
+      # change `from`on a per project basis, that may be main, master or
+      # whichever branch your features branch off from
+      - run: npx commitlint --from=origin/develop --to=HEAD
